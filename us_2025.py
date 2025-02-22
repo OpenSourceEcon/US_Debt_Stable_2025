@@ -33,13 +33,12 @@ def main():
     print("Number of workers = ", num_workers)
 
     # Directories to save data
-    CUR_DIR = os.path.dirname(os.path.realpath(__file__))
-    save_dir = os.path.join(CUR_DIR, "US2025")
-    base_dir = os.path.join(save_dir, "OUTPUT_BASELINE")
-    reform_dir_G = os.path.join(save_dir, "OUTPUT_REFORM_G")
-    reform_dir_Gr = os.path.join(save_dir, "OUTPUT_REFORM_Gr")
-    reform_dir_regref = os.path.join(save_dir, "OUTPUT_REFORM_RegRef")
-
+    cur_dir = os.path.dirname(os.path.realpath(__file__))
+    json_dir = os.path.join(cur_dir, "json")
+    base_dir = os.path.join(cur_dir, "OUTPUT_BASELINE")
+    reform_dir_G = os.path.join(cur_dir, "OUTPUT_REFORM_G")
+    reform_dir_Gr = os.path.join(cur_dir, "OUTPUT_REFORM_Gr")
+    reform_dir_regref = os.path.join(cur_dir, "OUTPUT_REFORM_RegRef")
 
     """
     ------------------------------------------------------------------------
@@ -58,9 +57,7 @@ def main():
     p.update_specifications(
         json.load(
             open(
-                os.path.join(
-                    CUR_DIR, "us_2025_base_params.json"
-                )
+                os.path.join(json_dir, "us_2025_base_params.json")
             )
         )
     )
@@ -116,7 +113,7 @@ def main():
     """
     ---------------------------------------------------------------------------
     Run reform policy: Cut discretionary government spending by 3.3 percentage
-    points
+    points, from 9% of GDP to 7% of GDP
     ---------------------------------------------------------------------------
     """
     # Read in baseline parameter values from json file
@@ -131,9 +128,7 @@ def main():
     p_G.update_specifications(
         json.load(
             open(
-                os.path.join(
-                    CUR_DIR, "us_2025_refG_params.json"
-                )
+                os.path.join(json_dir, "us_2025_refG_params.json")
             )
         )
     )
@@ -237,7 +232,7 @@ def main():
 
     """
     ---------------------------------------------------------------------------
-    Run reform policy: Increase TFP by 2%, regulatory reform
+    Run reform policy: Increase TFP by 5%, regulatory reform
     ---------------------------------------------------------------------------
     """
     # Read in baseline parameter values from json file
@@ -252,9 +247,7 @@ def main():
     p_regref.update_specifications(
         json.load(
             open(
-                os.path.join(
-                    CUR_DIR, "us_2025_refregref_params.json"
-                )
+                os.path.join(json_dir, "us_2025_refregref_params.json")
             )
         )
     )
@@ -373,9 +366,7 @@ def main():
     p_gr.update_specifications(
         json.load(
             open(
-                os.path.join(
-                    CUR_DIR, "us_2025_refgr_params.json"
-                )
+                os.path.join(json_dir, "us_2025_refgr_params.json")
             )
         )
     )
