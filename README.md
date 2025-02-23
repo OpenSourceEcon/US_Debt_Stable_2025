@@ -3,9 +3,12 @@ Data, code, and images for US debt stabilization simulations from December 2024 
 
 ## Instructions for using the files
 
-## 1. Make sure you have Python
+## 1. Make sure you have Python, Conda, and Git
 
-You can make sure you
+We recommend you have the following to replicate the analyses in this repository:
+* The Anaconda distribution of Python. Download [here](https://www.anaconda.com/download).
+    * With the Anaconda distribution of Python comes the Conda package manager.
+* Git version control software. Download [here](https://github.com/git-guides/install-git).
 
 ### 2. Download or clone the repository
 
